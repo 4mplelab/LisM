@@ -1,0 +1,28 @@
+.md-typeset {
+  font-size: 16px;
+}
+
+.md-main__inner {
+  max-width: 70rem;
+}
+
+p.revision-date {
+  font-size: 0.5rem;
+  opacity: 0.5;
+}
+
+.md-source-file {
+  display: none;
+}
+
+.revision-dates-container {
+  text-align: right;
+  margin-right: 1em; /* Add some space below the dates */
+}
+
+.revision-date-item {
+  display: inline-block; /* Allows margin between them */
+  margin-left: 1em; /* Margin between date items */
+  font-size: 0.8em; /* Make the font a bit smaller */
+  opacity: 0.7; /* Make them slightly less prominent */
+}

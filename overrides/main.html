@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="revision-dates-container">
+    <div class="revision-date-item">
+      更新日: {{ page.meta.git_revision_date_localized }}
+    </div>
+  </div>
+  {{ super() }}
+{% endblock %}

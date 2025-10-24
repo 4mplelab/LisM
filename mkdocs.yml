@@ -1,0 +1,70 @@
+site_name: LisM ドキュメント
+theme:
+  name: material
+  custom_dir: overrides
+  font:
+    text: Noto Sans JP
+    code: Roboto Mono
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: black
+      accent: pink
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: grey
+      accent: teal
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+plugins:
+  - search:
+      lang: 'ja'
+  - glightbox
+  - macros
+  - git-revision-date-localized:
+      locale: ja
+      timezone: Asia/Tokyo
+nav:
+  - Top: index.md
+  - ビルドガイド:
+    - ビルドガイドTop: build_guides/index.md
+    - 本体: build_guides/main.md
+    - モジュール:
+      - トラックボールセンサー: build_guides/modules/trackball_sensor.md
+      - 水平ロータリーエンコーダー: build_guides/modules/horizontal_rotary_encoder.md
+      - 垂直ロータリーエンコーダー: build_guides/modules/vertical_rotary_encoder.md
+      - キースイッチ: build_guides/modules/key.md
+    - ユニット:
+      - トラックボール (10-14mm): build_guides/units/trackball_10-14mm.md
+      - トラックボール (20mm): build_guides/units/trackball_20mm.md
+  - HowTo : how2.md
+markdown_extensions:
+  - admonition
+  - footnotes
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      title: 目次
+      permalink: true
+extra_css:
+  - styles/custom.css
+
+extra:
+  three_d_data_url: "https://github.com/4mplelab/LisM/tree/main/3d-data"
+  firmware_keyboard_url: "https://github.com/4mplelab/zmk-keyboards-LisM"
+  firmware_config_url: "https://github.com/4mplelab/zmk-config-LisM"
+  keymap_svg: "https://raw.githubusercontent.com/4mplelab/zmk-config-LisM/refs/heads/main/keymap-drawer/lism.svg"
+
+copyright: "&copy; 2025 4mple Lab"
