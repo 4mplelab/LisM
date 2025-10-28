@@ -42,6 +42,7 @@ nav:
     - ユニット:
       - トラックボール (10-14mm): build_guides/units/trackball_10-14mm.md
       - トラックボール (20mm): build_guides/units/trackball_20mm.md
+  - ファームウェア: firmware.md
   - HowTo : how2.md
 markdown_extensions:
   - admonition
