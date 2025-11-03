@@ -39,11 +39,20 @@
 
 ## 組み立て手順
 ### 1. はんだ付け
+
+??? tip "エンコーダーの回転をスムーズにしたい方"  
+    以下のポストのように部品を外すと力を入れずに回すことができるようになります。  
+    <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ロータリーエンコーダーが回すのに結構トルク必要だったけど中の部品一つ外したらめっちゃ快適になった <a href="https://t.co/ILao7Msenr">pic.twitter.com/ILao7Msenr</a></p>&mdash; shakupan (@shakupan_) <a href="https://twitter.com/shakupan_/status/1856025469663228051?ref_src=twsrc%5Etfw">November 11, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 1. エンコーダーを基板に挿入し、はんだ付けを行ってください。  
     ![はんだ付け](img/venc-build01-01.jpeg){ width="65%" }
    
-2. 画像の赤丸の足は、ケースやFFCを通す時に干渉するため、切断してください。
+2. 画像の赤丸の足は、ケースやFFCを通す時に干渉するため、切断してください。  
+   (切断してからはんだ付けでもOKですが、切り過ぎにはご注意ください)
     ![cut](img/venc-build01-02.jpg){ width="65%" }
+
+    !!! info "(推奨)FFCを保護するため、FFCが通る部分をテープ等で覆ってください。"  
+        ![保護](img/venc-build01-03.jpeg){ width="65%" }
 
 ### 2. ボトムケースへマグネット取り付け
 1. 底面(手前側)2カ所へマグネットを取り付けてください。

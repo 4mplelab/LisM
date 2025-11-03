@@ -61,6 +61,13 @@ markdown_extensions:
       permalink: true
 extra_css:
   - styles/custom.css
+  - https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css
+  - https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css
+
+extra_javascript:
+  - https://code.jquery.com/jquery-3.7.1.min.js
+  - https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js
+  - js/custom.js
 
 extra:
   three_d_data_url: "https://github.com/4mplelab/LisM/tree/main/3d-data"
@@ -69,3 +76,6 @@ extra:
   keymap_svg: "https://raw.githubusercontent.com/4mplelab/zmk-config-LisM/refs/heads/main/keymap-drawer/lism.svg"
 
 copyright: "&copy; 2025 4mple Lab"
+
+site_url: https://4mplelab.github.io/LisM
+site_description: "自作キーボードLisMのドキュメントです。"

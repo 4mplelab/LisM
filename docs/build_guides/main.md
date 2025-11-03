@@ -137,13 +137,14 @@
 
 !!! warning "バッテリーがショートしないように注意して作業してください"
 
-1. 同梱のコネクタ付き配線を3cmくらいでカットして被覆を剥いてください。  
+1. 同梱のコネクタ付き配線を2cmくらいでカットして被覆を剥いてください。  
    ![Image title](img/main-build04-01.jpeg){ width="65%" }
 2. (必要に応じて)予備はんだをつけてください。  
    ![Image title](img/main-build04-02.jpg){ width="65%" }
 3. 収縮チューブを通した後、バッテリーの配線とはんだ付けしてください。
    ![Image title](img/main-build04-03.jpg){ width="65%" }  
 4. 収縮チューブで絶縁してください。  
+   配線の長さは合計で3cmくらいが理想です。  
    ![Image title](img/main-build04-04.jpeg){ width="65%" }
 
 ### 5. FFCケーブルの取り付け

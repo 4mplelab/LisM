@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 
+{% block htmltitle %}
+  <title>{{ page.title | striptags }} - {{ config.site_name }}</title>
+{% endblock %}
+
+{% block extrahead %}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page.title | striptags }}">
+  <meta property="og:description" content="{{ config.site_description }}">
+  <meta property="og:url" content="{{ page.canonical_url }}">
+  <meta property="og:image" content="{{ config.site_url }}img/top.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title | striptags }}">
+  <meta name="twitter:description" content="{{ config.site_description }}">
+  <meta name="twitter:image" content="{{ config.site_url }}img/top.jpeg">
+{% endblock %}
+
 {% block content %}
   <div class="revision-dates-container">
     <div class="revision-date-item">

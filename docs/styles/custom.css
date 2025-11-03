@@ -26,3 +26,7 @@ p.revision-date {
   font-size: 0.8em; /* Make the font a bit smaller */
   opacity: 0.7; /* Make them slightly less prominent */
 }
+
+.slick-slider div {
+  margin: 4px 8px;
+}
