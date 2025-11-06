@@ -12,7 +12,7 @@
     targetClass: 'ogp-card-target',
     apiEndpoint: 'https://ogp-scanner.kunon.jp/v1/ogp_info',
     onSuccess: (element, data, url) => {
-      console.log('Fetched OGP data:', { element, data, url });
+      console.debug('Fetched OGP data:', { element, data, url });
     },
     onError: (element, error) => {
       console.error('Error fetching OGP data:', { element, error });
