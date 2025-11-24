@@ -53,7 +53,6 @@
   line-height: 1.4;
   color: #1a202c;
   /* Ellipsis for long titles */
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
