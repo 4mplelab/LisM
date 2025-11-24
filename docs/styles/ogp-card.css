@@ -74,7 +74,6 @@
   font-size: 0.75rem;
   color: #718096;
   /* Ellipsis for long URLs */
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
