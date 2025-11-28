@@ -54,8 +54,7 @@
 ## リンク
 - [販売ページ](https://shop.4mple-lab.com/items/119269662){:target="_blank"}
 - [ビルドガイド](build_guides/)
-- [ファームウェア(個人設定)]({{firmware_config_url}}){:target="_blank"}
-- [ファームウェア(ハードウェア構成)]({{firmware_keyboard_url}}){:target="_blank"}
+- [ファームウェア]({{firmware_config_url}}){:target="_blank"}
 - [3Dデータ]({{three_d_data_url}}){:target="_blank"}
 
 ### ファームウェアについて

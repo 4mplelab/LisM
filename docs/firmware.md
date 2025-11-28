@@ -3,18 +3,25 @@
 LisMはZMKファームウェアを使用しています。  
 キーマップの変更やモジュールの構成変更には、ファームウェアの書き換えが必要です。
 
+- **[zmk-config-LisM]({{firmware_config_url}}){:target="_blank"}**  
+
 ---
 
-## ファームウェアの考え方
+## セントラルとペリフェラル
+デフォルトでは`右がセントラル`, `左がペリフェラル`です。  
+`build.yaml`を編集してビルドすることで逆にすることも可能です。
 
-ZMK(Zephyr)の設計思想に基づき、`個人設定`と`ハードウェア構成`が分離されています。
+---
 
-- **[zmk-keyboards-LisM (ハードウェア構成)]({{firmware_keyboard_url}}){:target="_blank"}**  
-  キーボードのハードウェアを構成するファームウェアです。  
-  通常、こちらを編集する必要はありません。
-- **[zmk-config-LisM (個人設定)]({{firmware_config_url}}){:target="_blank"}**  
-  キーマップやコンボなど、個人の好みに合わせて設定するファイルです。  
-  キーマップを変更したい場合は、こちらの`config/lism.keymap`を編集します。
+## 主な編集箇所
+
+- キーマップやコンボ  
+  `config/lism.keymap`を編集します。  
+  （KeymapEditorで変更できる内容です）
+
+- ハードウェア構成など  
+  `boards/`や`snippets/`内のファイルを編集します。  
+  （例えば、デュアルトラボで片側をスクロール固定にしたい場合など）
 
 ---
 
@@ -25,10 +32,12 @@ ZMK(Zephyr)の設計思想に基づき、`個人設定`と`ハードウェア構
 
 | 左側モジュール | 右側モジュール | 左手側ファームウェア | 右手側ファームウェア |
 | :--- | :--- | :--- | :--- |
-| トラックボール       | 非トラックボール[^1] | `lism_left_trackball.uf2` | `lism_right_non_trackball.uf2` |
-| 非トラックボール[^1] | トラックボール       | `lism_left_non_trackball.uf2` | `lism_right_trackball.uf2` |
-| 非トラックボール[^1] | 非トラックボール[^1] | `lism_left_non_trackball.uf2` | `lism_right_non_trackball.uf2` |
-| トラックボール       | トラックボール       | `lism_left_trackball.uf2` | `lism_right_trackball.uf2` |
+| トラックボール       | 非トラックボール[^1] | `lism_left_[c/p]_trackball.uf2` | `lism_right_[c/p]_non_trackball.uf2` |
+| 非トラックボール[^1] | トラックボール       | `lism_left_[c/p]_non_trackball.uf2` | `lism_right_[c/p]_trackball.uf2` |
+| 非トラックボール[^1] | 非トラックボール[^1] | `lism_left_[c/p]_non_trackball.uf2` | `lism_right_[c/p]_non_trackball.uf2` |
+| トラックボール       | トラックボール       | `lism_left_[c/p]_trackball.uf2` | `lism_right_[c/p]_trackball.uf2` |
+
+[c/p]は`central` または `peripheral`
 
 [^1]:「非トラックボール」モジュールには以下が含まれます。  
     - 水平ロータリーエンコーダー  
@@ -59,6 +68,11 @@ ZMK(Zephyr)の設計思想に基づき、`個人設定`と`ハードウェア構
 3.  **ファームウェアファイルをコピーする**
     - `.uf2` 形式のファームウェアファイルを、表示されたUSBドライブにドラッグ＆ドロップでコピーします。
     - コピーが完了すると、キーボードは自動的に再起動します。
+
+    !!! note "macOSでは書き込み後に以下のメッセージが表示されますが、典型挙動で問題ありません"  
+        これらのメッセージが表示されても正しく書き込まれています。  
+        ![err](img/write_fw_mac_err02.png){ width="48%" }
+        ![err](img/write_fw_mac_err01.png){ width="48s%" }
 
 --- 
 
