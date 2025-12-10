@@ -1,0 +1,101 @@
+:root {
+  --sl-content-width: 60rem;
+}
+
+.hero {
+  padding: 0;;
+}
+
+@media (min-width: 72rem) {
+  .hero {
+    padding: 0;
+  }
+}
+
+h1#_top { width: 100%; } 
+h1#_top img { 
+  display: block;
+  margin: 0 auto;
+} 
+
+/* Custom styles for images in markdown content */
+.sl-markdown-content img:not([src$=".svg"]):not(.no-style) {
+  display: block;
+  margin-inline: auto;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .main-pane {
+    padding: 0 3rem;;
+  }
+  .sl-markdown-content img:not([src$=".svg"]):not(.no-style) {
+    width: 80%;
+  }
+}
+
+/* Modern styles for .details-card blocks */
+details.details-card {
+  background-color: var(--sl-color-gray-8); /* 背景色 */
+  border: 1px solid var(--sl-color-gray-5); /* 枠線 */
+  border-radius: 8px; /* 角の丸み */
+  padding: 1rem; /* 内側の余白 */
+  color: var(--sl-color-text); /* テキスト色 */
+  width: 95%; /* 幅を90%に設定 */
+  margin: 1rem auto;
+}
+
+details.details-card > summary {
+  font-weight: 600; /* タイトルの太字 */
+  cursor: pointer; /* クリック可能であることを示すカーソル */
+  list-style: none; /* デフォルトのマーカーを非表示 */
+  position: relative; /* カスタム矢印の配置用 */
+  padding-right: 20px; /* 矢印のためのスペース */
+  color: var(--sl-color-text-accent); /* タイトルテキストの色をアクセントカラーに */
+}
+
+/* デフォルトの矢印アイコンを非表示にする */
+details.details-card > summary::marker,
+details.details-card > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* カスタム矢印アイコン */
+details.details-card > summary::before {
+  content: '▶'; /* Unicodeの右向き三角形 */
+  position: absolute;
+  right: 0;
+  transform: rotate(0deg);
+  transition: transform 0.2s ease-in-out; /* スムーズな回転アニメーション */
+  font-size: 0.8em;
+}
+
+/* detailsが開いたときに矢印を回転させる */
+details.details-card[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+/* details内のコンテンツのスタイル */
+details.details-card > *:not(summary) {
+  padding-top: 0.5rem; /* サマリーとコンテンツの間の余白 */
+  margin-top: 0.5rem;
+  border-top: 1px dashed var(--sl-color-gray-3); /* 上部に点線 */
+}
+
+/* コンテンツ内の最初の子要素の余白調整 */
+details.details-card > *:not(summary) > *:first-child {
+    margin-top: 0;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  margin: 0.5rem auto;
+}
+
+.grid-container > *{
+  margin-top: 0;
+}

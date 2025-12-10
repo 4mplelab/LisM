@@ -1,0 +1,85 @@
+---
+title: Welcom to documents.
+template: splash
+hero:
+  title: <img src="LisM/img/logo.svg" >
+  tagline: 左右それぞれの親指位置の1Uを異なるモジュールに交換できる分割キーボードです。
+  image:
+    file: img/top.jpeg
+  actions:
+    - text: ビルドガイド
+      link: build_guides
+      icon: right-arrow
+    - text: ファームウェア
+      link: https://github.com/4mplelab/zmk-config-LisM
+      icon: github
+      variant: secondary 
+    - text: 購入
+      link: https://shop.4mple-lab.com/items/119269662
+      variant: secondary
+      icon: star
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+## 特徴
+<CardGrid>
+  <Card title="モジュール機構">
+    左右の親指部は、以下のモジュールに換装できます。  
+    * トラックボール (センサーはPAW3222)  
+      10, 12, 14, 20mmをご用意  
+      いずれもベアリングを採用
+    * 水平ロータリーエンコーダー (クリック付き)
+    * 垂直ロータリーエンコーダー (5pin対応)
+    * キースイッチ (ホットスワップ非対応)
+  </Card>
+  <Card title="ネジレス構造のケース">
+    内部へのアクセスが容易でメンテナンスしやすい構造です。  
+    (モジュールは一部ネジを使用しています)
+  </Card>
+</CardGrid>
+<CardGrid>
+  <Card title="キー配列">
+    17mmピッチのオーソリニア（格子）配列です。  
+    キー数は基本40個で、モジュール構成により最大42個まで使用できます。
+  </Card>
+  <Card title="ファームウェア">
+    ZMKファームウェアに対応しており、キーマップを自由にカスタマイズできます。  
+    (将来的にはRMKファームウェアの対応も検討中)
+  </Card>
+</CardGrid>
+
+## 仕様
+| 項目        | 仕様 |
+| ---        | --- |
+| キー数      | 40 (最大42) |
+| 配列        | オーソリニア (17mmピッチ) |
+| 対応スイッチ | Kailh Choc V1 / V2 |
+| サイズ      | W: 109mm / D: 75.5mm / H: 16mm (キートップまで) |
+| 重量        | 左右合計 約190g (14mmボール, 垂直エンコーダー構成時) |
+
+## 開発コンセプト
+トラックボールやロータリーエンコーダーは便利な入力デバイスですが、その使用感は個人の好みや慣れに大きく左右されます。  
+そのため、購入後に「想像していた使用感と違った」「別のデバイスを試したい」と感じることも少なくありません。
+
+`LisM`のモジュール機構は、そうした購入後のミスマッチを解消します。  
+親指部のモジュールはいつでも交換できるため、「左右を入れ替えたい」「よりシンプルなキーにしたい」といった要望に柔軟に対応。  
+また、作業内容の変化に応じて構成を見直すなど、長期的な視点で最適な組み合わせを追求できます。  
+<small>（モジュールの交換は数分かかるため、その日の気分での変更は現実的ではないかもしれません）</small>
+
+様々な組み合わせを試すことで、ご自身にとって最適な入力環境を追求できます。
+
+
+## リンク
+- [販売ページ](https://shop.4mple-lab.com/items/119269662)
+- [ビルドガイド](build_guides/)
+- [ファームウェア](https://github.com/4mplelab/zmk-config-LisM)
+- [3Dデータ](https://github.com/4mplelab/LisM/tree/main/3d-data)
+
+### ファームウェアについて
+詳細は[ファームウェア](./firmware.md)のページを参照してください。
+
+## デフォルトキーマップ
+Mac特化＆クセがすごいキーマップなので変更必須
+
+![def_keymap](https://raw.githubusercontent.com/4mplelab/zmk-config-LisM/refs/heads/main/keymap-drawer/lism.svg)

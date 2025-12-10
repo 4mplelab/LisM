@@ -1,0 +1,102 @@
+---
+title: トラックボールセンサーモジュール ビルドガイド
+---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Badge } from '@astrojs/starlight/components';
+
+1Uサイズの`トラックボールセンサー`モジュールのビルドガイドです。  
+
+<Badge text="2025.12 変更" variant="note" /> 本体との固定はマグネットに変更しました。  
+内容物・ケースが変更されています。
+
+## 内容物
+<Tabs>
+<TabItem label="マグネットver 2025.12~">
+![部品](img/sensor01_02.jpg)
+
+| 部品名 | 数量 | 備考 |
+| :--- | :--- | :--- |
+| 基板 | 1 | PAW3222搭載 |
+| マグネット | 4 | 3mm x 1mm 本体接続用 |
+| マグネット | 4 | 2mm x 1mm トラボユニット接続用 |
+
+## ケース
+![ケース](img/sensor02_02.jpg)
+
+
+:::note[ケースをご自身で用意される方は]
+[ケースデータ](https://github.com/4mplelab/LisM/tree/main/3d-data/case/modules)の`TrackBallSensor_SnapFit.step`を参照ください。
+:::
+
+| 部品名 | モデル名 | 備考 |
+| :--- | :--- | :--- |
+| トップケース | TopPart | |
+| ボトムケース | BottomPart | |
+</TabItem>
+<TabItem label="ネジver ~2025.11">
+![部品](img/sensor01.jpg)
+
+| 部品名 | 数量 | 備考 |
+| :--- | :--- | :--- |
+| 基板 | 1 | PAW3222搭載 |
+| ネジ | 4 | M2 x 4mm |
+| マグネット | 4 | 2mm x 1mm |
+
+## ケース
+![ケース](img/sensor02.jpg)
+
+
+:::note[ケースをご自身で用意される方は]
+[ケースデータ](https://github.com/4mplelab/LisM/tree/main/3d-data/case/modules)の`TrackBallSensor.step`を参照ください。
+:::
+
+| 部品名 | モデル名 | 備考 |
+| :--- | :--- | :--- |
+| トップケース | TopPart | |
+| ボトムケース | BottomPart | |
+</TabItem>
+</Tabs>
+
+
+## 組み立て手順
+
+### 1. トップケースへマグネット取り付け
+1. 4カ所へマグネットを取り付けてください。
+   
+    :::caution[トラックボールユニットのマグネットの極性に合わせる必要があります]
+    ![ケース](img/sensor-build01-01.jpeg)
+    :::
+
+### 2. ケース組み立て
+1. FFCコネクタの位置を確認し、トップケースへ基板を入れてください。  
+    ![ケース](img/sensor-build02-01.jpeg)
+     
+<Tabs>
+<TabItem label="マグネットver">
+1. ボトムケースへマグネットを取り付けてください。  
+    :::caution[本体のマグネットの極性に合わせる必要があります]
+    ![ケース](img/sensor-build02-01-mag.jpeg)
+    :::
+2. トップケースとボトムケースを合わせて嵌めてください。
+    ![ケース](img/sensor-build02-02-mag.jpeg)  
+</TabItem>
+<TabItem label="ネジver">
+1. ボトムケースをM2ネジで固定して完成です。(締め過ぎ注意)  
+    ![ケース](img/sensor-build02-02.jpeg)  
+</TabItem>
+</Tabs>
+
+完成  
+![ケース](img/sensor-build02-03.jpeg)  
+
+
+:::note[トップケースとボトムケースで隙間が空く場合]
+基板裏面のレンズ固定箇所が干渉している可能性があります。  
+気になる方はニッパー等で切り、干渉を除去してください。(削りすぎ注意)   
+![ケース](img/sensor-build02-warn.jpeg)
+:::
+
+---
+
+## 本体への取り付け
+組み立てたモジュールは、[モジュール付け替えの手順](../../../how2#モジュール付け替え)を参考に本体に取り付けてください。

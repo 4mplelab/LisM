@@ -1,0 +1,12 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+  .logo { fill: #F6F6F6; }
+  .box { fill: #545454ff; }
+  @media (prefers-color-scheme: dark) {
+    .logo { fill: #131313; }
+    .box { fill: #F6F6F6; }
+  }
+</style>
+<rect class="box" x="2.00098" y="2" width="28" height="28" rx="4" />
+<path class="logo" d="M15.6025 19.8945H24.1572V25H9.99316V5.72656H15.6025V19.8945Z" />
+</svg>
