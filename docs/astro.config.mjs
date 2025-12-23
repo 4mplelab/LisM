@@ -69,6 +69,19 @@ export default defineConfig({
 			],
 			head: [
 				{ tag: 'meta', attrs: { property: 'og:image', content: 'https://4mplelab.github.io/LisM/img/ogp_lism.png' } },
+				{
+					tag: 'script',
+					attrs: { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-C13DXFJ6RG' },
+				},
+				{
+					tag: 'script',
+					content: `
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+						gtag('config', 'G-C13DXFJ6RG');
+					`,
+				},
 			],
 		}),
 		mdx(),
