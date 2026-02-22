@@ -10,7 +10,7 @@ LisMはZMKファームウェアを使用しています。
 ---
 
 ## セントラルとペリフェラル
-デフォルトでは`右がセントラル`, `左がペリフェラル`です。  
+デフォルトでは、`右がセントラル`、`左がペリフェラル`です。  
 `build.yaml`を編集してビルドすることで逆にすることも可能です。
 
 ---
@@ -26,6 +26,12 @@ LisMはZMKファームウェアを使用しています。
   （例えば、デュアルトラボで片側をスクロール固定にしたい場合など）
 
 ---
+
+## ビルド済みファームウェア
+
+- [v1.0.1 (ZMK v0.3)](https://github.com/4mplelab/zmk-config-LisM/releases/download/v1.0.1/firmware.zip)
+- [DYA Studio対応版 (ZMK v0.3)](https://github.com/4mplelab/zmk-config-LisM/actions/runs/22272298573/artifacts/5605648532)
+
 
 ## モジュール構成とファームウェア
 
@@ -67,9 +73,9 @@ import err2 from 'img/write_fw_mac_err02.png';
             <Image src={boot1} alt="boot1" />
             <Image src={boot2} alt="boot2" />
         </div>
-    - キーボード底面のリセットボタンを**リセットボタンを素早く2回押し**ます。  
+    - キーボード底面のリセットボタンを**素早く2回**押します。  
       ![bottom](img/boot_03.jpeg)
-    - XIAOの**リセットボタンを素早く2回押し**ます。  
+    - XIAOのリセットボタンを**素早く2回**押します。  
       ![xiao](img/boot_04.jpeg)
   
 
@@ -87,20 +93,50 @@ import err2 from 'img/write_fw_mac_err02.png';
     </div>
     :::
 
-
-
-
 --- 
 
 ## キーマップの変更方法
 
-キーマップの変更には、主に以下の3つの方法があります。ご自身の環境や好みに合わせて選択してください。
+キーマップの変更には、主に以下の4つの方法があります。  
+ご自身の環境や好みに合わせて選択してください。
 
-### 1. ローカル環境でのビルド (推奨)
 
-ご自身のPCに[Docker](https://www.docker.com/products/docker-desktop/)と[VS Code](https://code.visualstudio.com/)を準備することで、最も手軽かつ高速にキーマップの試行錯誤ができます。GitHubアカウントは不要で、一度環境を構築すれば、約30秒でビルドが完了します。
+|  | 方法 | 特徴 |
+| :--- | :--- | :--- |
+| 1 | DYA Studio | ファームウェアの書き換え不要でブラウザから様々な設定可能(トラボも可能) |
+| 2 | ローカルビルド | 環境構築が必要だが、変更→テストが試しやすい |
+| 3 | GitHub Actions | ブラウザで完結できる |
+| 4 | ZMK Studio | ファームウェアの書き換え不要でブラウザから様々な設定可能 |
 
-**こちらが最も推奨される手順です。**
+### 1. DYA Studio
+
+<div class="ogp-card-target no-style">
+  <a href="https://studio.dya.cormoran.works" target="_blank">DYA Studio</a>
+</div>
+
+[@cormoran707](https://x.com/cormoran707)さんが作成された素晴らしいキーマップ変更ツールです。  
+ファームウェアのビルド・書き換え不要でブラウザからキーマップ・エンコーダー・トラックボールなど各種設定を変更可能です。  
+ZMK Studioよりできることが多く、デザインや操作性に優れています。
+
+#### 専用ファームウェアが必要
+利用するには専用のファームウェアを使用する必要があります。  
+LisMでは別ブランチ(`dya-studio_zmk-v0.3`)にて用意しています。
+- [ブランチ (dya-studio_zmk-v0.3)](https://github.com/4mplelab/zmk-config-LisM/tree/dya-studio_zmk-v0.3)
+- [ビルド済みファームウェア](./#ビルド済みファームウェア)
+
+#### 機能や使用方法
+本家 [DYA Studio](https://studio.dya.cormoran.works)を参照。 
+
+:::caution[DYA Studioに関しての注意事項]
+- 現時点では実験的な機能とのことですので、自己責任にてご利用ください。
+- 当方は一切のサポートを致しかねます。
+- 使用できる専用ファームウェアは提供いたしますが、継続的に提供できるかは不明です。
+:::
+
+### 2. ローカル環境でのビルド
+
+ご自身のPCに[Docker](https://www.docker.com/products/docker-desktop/)と[VS Code](https://code.visualstudio.com/)を準備することで、最も手軽かつ高速にキーマップの試行錯誤ができます。  
+GitHubアカウントは不要で、一度環境を構築すれば、約30秒でビルドが完了します。
 
 **準備:**
 
@@ -141,7 +177,7 @@ import err2 from 'img/write_fw_mac_err02.png';
     ビルドが完了すると、`firmware_builds`フォルダ内に`.uf2`ファイルが生成されます。  
     このファイルを、キーボードをブートローダーモードで起動して表示されるUSBドライブにコピーします。
 
-### 2. GitHub Actionsでのビルド
+### 3. GitHub Actionsでのビルド
 
 GitHubアカウントをお持ちの場合、リポジトリをフォークしてGitHub Actionsでビルドすることも可能です。  
 PCに開発環境を構築する必要はありませんが、ビルドに数分かかります。
@@ -170,18 +206,19 @@ PCに開発環境を構築する必要はありませんが、ビルドに数分
         フォークしたリポジトリにある`config/lism.keymap`ファイルを、GitHub上で直接編集してコミットすることも可能です。
 4.  **ビルドの実行とダウンロード**  
     変更をコミットすると、自動的にGitHub Actionsでビルドが開始されます。  
-    ビルドが完了したら、Actionsのページから成果物（`firmware.zip`）をダウンロードします。
+    ビルドが完了したら、`Actions`→`Build ZMK firmware`→`最新のworkflow run`→`Artifacts`から`firmware`をダウンロードします。
 5.  **ファームウェアの書き込み**  
     zipファイルを解凍し、中の`.uf2`ファイルをキーボードに書き込みます。
 
-### 3. ZMK Studioの利用 (非推奨)
+### 4. ZMK Studioの利用 (非推奨)
 
-[ZMK Studio](https://studio.zmk.dev/)は、キーマップをリアルタイムで変更できるWebアプリケーションです。手軽ですが、ファームウェアのメモリ使用量が増加するため、予期せぬ不具合が発生する可能性があり、**この方法は推奨されません。**
+[ZMK Studio](https://studio.zmk.dev/)は、キーマップをリアルタイムで変更できるWebアプリケーションです。  
+手軽ですが、ファームウェアのメモリ使用量が増加するため、予期せぬ不具合が発生する可能性があり、**この方法は推奨されません。**
 
 **手順:**
 
 1.  **Studio対応ファームウェアの入手**  
-    上記「ローカル環境でのビルド」の`make all`コマンドで生成される`..._studio.uf2`という名前のファームウェアを使用します。
+    ビルドして生成された`..._studio.uf2`という名前のファームウェアを使用します。
 2.  **ファームウェアの書き込み**  
     入手したStudio対応`.uf2`ファイルをキーボードに書き込みます。
 3.  **ZMK Studioでの設定**

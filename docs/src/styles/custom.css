@@ -19,7 +19,7 @@ h1#_top img {
 } 
 
 /* Custom styles for images in markdown content */
-.sl-markdown-content img:not([src$=".svg"]):not(.no-style) {
+.sl-markdown-content img:not([src$=".svg"]):not(.no-style):not([class^="ogp-card"]) {
   display: block;
   margin-inline: auto;
   width: 100%;
@@ -29,7 +29,7 @@ h1#_top img {
   .main-pane {
     padding: 0 3rem;;
   }
-  .sl-markdown-content img:not([src$=".svg"]):not(.no-style) {
+  .sl-markdown-content img:not([src$=".svg"]):not(.no-style):not([class^="ogp-card"]) {
     width: 80%;
   }
 }

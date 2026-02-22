@@ -75,6 +75,18 @@ export default defineConfig({
 				},
 				{
 					tag: 'script',
+					attrs: { async: true, src: 'https://base-shop-4mple-lab.pages.dev/js/ogp-card.js' },
+				},
+				{
+					tag: 'script',
+					attrs: { async: true, src: 'https://base-shop-4mple-lab.pages.dev/js/ogp-card-renderer.js' },
+				},
+				{
+					tag: 'link',
+					attrs: { rel: 'stylesheet', href: 'https://base-shop-4mple-lab.pages.dev/styles/ogp-card.css' },
+				},
+				{
+					tag: 'script',
 					content: `
 						window.dataLayer = window.dataLayer || [];
 						function gtag(){dataLayer.push(arguments);}
