@@ -56,6 +56,7 @@ export default defineConfig({
 									label: 'トラックボール (10-14mm)',
 									slug: 'build_guides/units/trackball_10-14mm',
 								},
+								{ label: 'トラックボール (19mm)', slug: 'build_guides/units/trackball_19mm' },
 								{ label: 'トラックボール (20mm)', slug: 'build_guides/units/trackball_20mm' },
 							],
 						},

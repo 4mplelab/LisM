@@ -2,6 +2,11 @@
 title: トラックボールユニット (20mm) ビルドガイド
 ---
 
+:::caution[現在は販売中止]
+19mmボールの販売開始に伴い、現在は販売していません。  
+過去購入者向けにビルドガイドを残しています。
+:::
+
 20mmボールを使用したトラックボールユニットのビルドガイドです。
 
 ## 内容物
@@ -21,7 +26,7 @@ title: トラックボールユニット (20mm) ビルドガイド
 ![ケース](img/ball20_02.jpg)
 
 :::note[ケースをご自身で用意される方は]
-[ケースデータ](https://github.com/4mplelab/LisM/tree/main/3d-data/case/units)の`TrackBall20mm.step`をご使用ください。
+[ケースデータ](https://github.com/4mplelab/LisM/tree/main/3d-data/case/old_type)の`TrackBall20mm.step`をご使用ください。
 :::
 
 | 部品名 | モデル名 | 備考 |
