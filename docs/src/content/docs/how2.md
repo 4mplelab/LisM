@@ -4,7 +4,7 @@ title: 使い方
 
 ## 電源ON/OFF
 キーボードの側面にあるスライドスイッチで電源のON/OFFを切り替えます。 
-![電源](img/power.jpg){width=65%}  
+![電源](img/power.jpg)  
 ONにするとLEDインジケーターが点灯し、起動状態を示します。
 
 ---
