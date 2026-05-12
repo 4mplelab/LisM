@@ -20,7 +20,26 @@ import { LinkButton } from '@astrojs/starlight/components';
 
 ### キットの内容物
 
-<Tabs>
+<Tabs syncKey="pcb_version">
+<TabItem label="ver 1.2.0">
+
+![内容物](img/main01_v1.1.0.jpg)
+
+| 部品名 | 数量 | 備考 |
+| :--- | :--- | :--- |
+| メイン基板 | 1 | |
+| Seeed Studio XIAO nRF52840 | 2 | |
+| 電源スイッチ | 2 | MSK-12D19 |
+| リセットスイッチ | 2 | SKQYACE010 |
+| JSTコネクタ | 2 | 2p SMD Horizontal |
+| JSTコネクタケーブル | 2 | 2p |
+| ソケット | 40 | Kailh Choc V1, V2用 |
+| FFC (フレキシブルフラットケーブル) | 4 | 6pin 0.5mm Forward 10cm (2枚予備) |
+| マグネット | 8 | 3mm x 1mm |
+| スパッジャー | 1 | FFCコネクタ用 |
+| 紙ステンシル | 2 | XIAOリフロー用 (1枚予備) |
+
+</TabItem>
 <TabItem label="ver 1.1.0">
 
 ![内容物](img/main01_v1.1.0.jpg)
@@ -61,41 +80,63 @@ import { LinkButton } from '@astrojs/starlight/components';
 
 </TabItem>
 </Tabs>
+
+
 ### ケース
 <Aside type="note" title="ケースをご自身で用意される方は">
 [ケースデータ](https://github.com/4mplelab/LisM/tree/main/3d-data/case)の`LisM_vx.x.x.step`をご使用ください。
 </Aside>
 
 ケースは`フローティングデザイン`と`フラットデザイン`の2種類あります。  
-ボトムケース・電源スイッチカバーは共通です。
 
-<Tabs>
-<TabItem label="フローティングデザイン">
-![ケース](img/main02_float.jpg)
+<Tabs syncKey="case_version">
+    <TabItem label="2026.03以降">
+    スイッチプレート・マイコンカバー・電源スイッチカバーは`フローティングデザイン`と`フラットデザイン`で共通です。  
+    部品も共通のため、画像は`フラットデザイン`を使用します。  
+    ![ケース](img/main02_202603.jpg)
 
-| 部品名 | モデル名 | 備考 |
-| :--- | :--- | :--- |
-| ボトムケース 左 | Left_BottomPart | |
-| ボトムケース 右 | Right_BottomPart | |
-| トップケース 左 | Left_Floating_TopPart | |
-| トップケース 右 | Right_Floating_TopPart | |
-| マイコンカバー 左 | Left_MCU_Cover | |
-| マイコンカバー 右 | Right_MCU_Cover | |
-| 電源スイッチカバー | Left/Right_Switch | 左右共通 |
-</TabItem>
-<TabItem label="フラットデザイン">
-![ケース](img/main02.jpg)
+    | 部品名 | モデル名 | 備考 |
+    | :--- | :--- | :--- |
+    | ボトムケース 左 | Left_BottomPart | |
+    | ボトムケース 右 | Right_BottomPart | |
+    | スイッチプレート 左 | Left_SwitchPlate | |
+    | スイッチプレート 右 | Right_SwitchPlate | |
+    | マイコンカバー 左 | Left_MCUCover | |
+    | マイコンカバー 右 | Right_MCUCover | |
+    | 電源スイッチカバー 左 | Left_PowerSwitch |  |
+    | 電源スイッチカバー 右 | Right_PowerSwitch |  |
+    </TabItem>
+    <TabItem label="2026.02以前">
+    ボトムケース・電源スイッチカバーは共通です。
+    <Tabs>
+        <TabItem label="フローティングデザイン">
+            ![ケース](img/main02_float.jpg)
 
-| 部品名 | モデル名 | 備考 |
-| :--- | :--- | :--- |
-| ボトムケース 左 | Left_BottomPart | |
-| ボトムケース 右 | Right_BottomPart | |
-| スイッチプレート 左 | Left_SwitchPlate | |
-| スイッチプレート 右 | Right_SwitchPlate | |
-| トップケース 左 | Left_TopPart | |
-| トップケース 右 | Right_TopPart | |
-| 電源スイッチカバー | Left/Right_Switch | 左右共通 |
-</TabItem>
+            | 部品名 | モデル名 | 備考 |
+            | :--- | :--- | :--- |
+            | ボトムケース 左 | Left_BottomPart | |
+            | ボトムケース 右 | Right_BottomPart | |
+            | トップケース 左 | Left_Floating_TopPart | |
+            | トップケース 右 | Right_Floating_TopPart | |
+            | マイコンカバー 左 | Left_MCU_Cover | |
+            | マイコンカバー 右 | Right_MCU_Cover | |
+            | 電源スイッチカバー | Left/Right_Switch | 左右共通 |
+            </TabItem>
+            <TabItem label="フラットデザイン">
+            ![ケース](img/main02.jpg)
+
+            | 部品名 | モデル名 | 備考 |
+            | :--- | :--- | :--- |
+            | ボトムケース 左 | Left_BottomPart | |
+            | ボトムケース 右 | Right_BottomPart | |
+            | スイッチプレート 左 | Left_SwitchPlate | |
+            | スイッチプレート 右 | Right_SwitchPlate | |
+            | トップケース 左 | Left_TopPart | |
+            | トップケース 右 | Right_TopPart | |
+            | 電源スイッチカバー | Left/Right_Switch | 左右共通 |
+        </TabItem>
+    </Tabs>
+    </TabItem>
 </Tabs>
 
 
@@ -105,7 +146,24 @@ import { LinkButton } from '@astrojs/starlight/components';
 ### 別途必要なもの
 
 
-<Tabs>
+<Tabs syncKey="pcb_version">
+<TabItem label="ver 1.2.0">
+| 部品 | 数量 | 備考 |
+| :--- | :--- | :--- |
+| バッテリー | 2 | 下記参照 |
+| 収縮チューブ or ビニールテープ | 1 | JST1.25コネクタ付きのバッテリーをご用意された方は不要 |
+| キースイッチ | 40 | Kailh Choc V1 または V2 |
+| キーキャップ | 40 | 16.5mm x 16.5mm以下を推奨 |
+| USB-C ケーブル | 1 | PCとの接続用 |
+| 滑り止め | - | `+GRIPLUS+（グリップラス）`がオススメ |
+
+**バッテリーについて**  
+組み立てオプション OP3-A / OP3-Bをご利用されない場合、下記いずれかをご用意ください。  
+
+- 3.7V リチウムポリマーバッテリー（302025型〜302040型）
+- リチウムイオンコインバッテリー LIR1655 保護回路基板
+</TabItem>
+
 <TabItem label="ver 1.1.0">
 | 部品 | 数量 | 備考 |
 | :--- | :--- | :--- |
@@ -145,7 +203,7 @@ import { LinkButton } from '@astrojs/starlight/components';
 
 | 工具名 | 備考 |
 | :--- | :--- |
-| はんだペースト | 低温 or 中温 ([参考](https://amzn.asia/d/55VmwUT)) |
+| はんだペースト | 低温 or 中温 ([参考](https://amzn.asia/d/07bkpzHv)) |
 | はんだペースト用工具 | ヘラ、スキージー、プラスチックカードなど |
 | ホットプレート | [私が使用している物](https://amzn.asia/d/01FeKOD) |
 
@@ -159,7 +217,7 @@ import { LinkButton } from '@astrojs/starlight/components';
 ### 1. XIAOとJSTコネクタのリフロー
 
 メイン基板にXIAOとコネクタをリフローで取り付けます。**(v1.1.0以降は電源スイッチも)**  
-コネクタやスイッチは通常のはんだごてでも取り付け可能ですが、XIAOはリフローが必須です。
+コネクタや電源スイッチは通常のはんだごてでも取り付け可能ですが、XIAOはリフローが必須です。
 
 1.  付属の紙ステンシルを基板の指定の場所にテープなどでしっかりと固定します。  
     基板とステンシルの間に浮きがないように注意してください。  
@@ -235,7 +293,7 @@ import { LinkButton } from '@astrojs/starlight/components';
 
 ### 5. FFCケーブルの取り付け
 
-<Aside type="caution" title="FFCコネクタのフリップは壊れやすいのでご注意ください">
+<Aside type="caution" title="FFCコネクタのアクチュエータは壊れやすいのでご注意ください">
 </Aside>
 
 1. 10cmのFFCをコネクタに取り付けてください。  
@@ -247,6 +305,69 @@ import { LinkButton } from '@astrojs/starlight/components';
 
 ### 6. ケースの組み立て
 
+<Tabs syncKey="case_version">
+<TabItem label="2026.03以降">
+#### 6-1 ボトムケース
+1.  ボトムケースのモジュール部分にマグネットを取り付けます。  
+    定規などで押さえて取り付けてください。
+
+    <Aside type="caution" title="マグネットの極性に注意">
+    </Aside>
+
+    <Aside type="tip" title="底面同士を引っ付けるには">
+    左右の全てを同じ極性にしてしまうと、底面を合わせると反発して引っ付けることができません。  
+    そこで、以下のポストのようにマグネットを取り付けると解決できます。  
+
+    <blockquote class="twitter-tweet">
+        <p lang="ja" dir="ltr">LisMユーザから超天才的アドバイスをいただきました😳… <a href="https://t.co/r5x44dZB4e">pic.twitter.com/r5x44dZB4e</a></p>&mdash; 4mple (シンプル) (@4mple_) <a href="https://twitter.com/4mple_/status/2049361852078170304?ref_src=twsrc%5Etfw">April 29, 2026</a>
+    </blockquote>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>    
+    </Aside>
+
+
+    <Aside type="tip" title="穴が大きい・小さい">
+    印刷精度や素材によっては穴が大きく緩い場合があるため、必要に応じて接着剤で固定してください。  
+    逆に穴が小さくきつい場合は、はんだごてで拡張してください。
+    </Aside>
+  
+    ![magnet_set](img/main-build06-202603-01.jpeg)  
+    ![magnet_scale](img/main-build06-202603-02.jpeg)  
+
+
+2.  バッテリーを置き、電源スイッチカバーをボトムケースに取り付けます。  
+    電源スイッチカバーはOFF側(手前側)に緑がくるように取り付けてください。  
+    ![pwr_switch](img/main-build06-202603-03.jpeg)  
+
+3.  電源スイッチと電源スイッチカバーの位置を合わせ、組み立てた基板をケースに載せます。  
+    ![基板の配置](img/main-build06-202603-04.jpeg)  
+    ![基板の配置](img/main-build06-202603-05.jpeg)
+
+4. 赤丸箇所を押し込み(初回は固いです)、バッテリーを接続します。  
+    ![バッテリー](img/main-build06-202603-06.jpeg)
+
+   
+    <Aside type="caution" title="電源OFF・極性確認！！">
+        接続前に電源がOFFになっていること、  
+        基板の印字`+`とバッテリーの`赤`線が接続されることを確認してください。  
+        ![warn_battery_line](img/main-build06-202603-07.png)
+    </Aside>
+
+#### 6-2 スイッチプレート・マイコンカバー
+1. スイッチプレートを載せ、ツメ8箇所で固定します。
+    ![switch_plate](img/main-build06-202603-08.jpeg)  
+    ![ツメ](img/main-build06-202603-tsume.png)
+
+    <Aside type="caution" title="ツメは折れやすいので注意！！">
+     上から押し込むと折れやすいです。  
+     スイッチプレートの中央部を山なりにして挿入すると折れにくいです。
+     ![やまなり](img/main-build06-202603-yama.png)
+    </Aside>
+
+2. マイコンカバーを載せ、押さえて嵌めます。  
+    ![mcu_cover](img/main-build06-202603-mcucover.png)
+
+</TabItem>
+<TabItem label="2026.02以前">
 #### 6-1 ボトムケース
 1.  ボトムケースのモジュール部分にマグネットを取り付けます。  
    
@@ -255,10 +376,10 @@ import { LinkButton } from '@astrojs/starlight/components';
 
     <Aside type="tip" title="穴が大きい・小さい">
     印刷精度や素材によっては穴が大きく緩い場合があるため、必要に応じて接着剤で固定してください。  
-    逆に穴が小さくきつい場合は、ハンダゴテで拡張してください。
+    逆に穴が小さくきつい場合は、はんだごてで拡張してください。
     </Aside>
 
-    定規などを使用して押さえて取り付けてください。   
+    定規などで押さえて取り付けてください。   
     ![magnet_set](img/main-build06-01.jpeg)  
     ![magnet_scale](img/main-build06-02.jpeg)  
     ![magnet_one](img/main-build06-03.jpeg)  
@@ -301,6 +422,8 @@ import { LinkButton } from '@astrojs/starlight/components';
 </TabItem>
 </Tabs>
 
+</TabItem>
+</Tabs>
 
 ### 7. FFCケーブル収納
 1. 画像を参考に引き出しやすい折り方で収納してください。  
