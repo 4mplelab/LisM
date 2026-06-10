@@ -34,23 +34,20 @@ DYA Studioを使用しない場合、キーマップの変更やモジュール�
 
 ## ビルド済みファームウェア
 
-- [v1.0.1 (ZMK v0.3)](https://github.com/4mplelab/zmk-config-LisM/releases/download/v1.0.1/firmware.zip)
-- [DYA Studio対応版 (ZMK v0.3)](https://github.com/4mplelab/zmk-config-LisM/actions/runs/26540438383/artifacts/7252649161)
+- [v1.1.0 (ZMK v0.3)](https://github.com/4mplelab/zmk-config-LisM/releases/download/v1.1.0/firmware.zip)
+- [DYA Studio対応版 (ZMK v0.3)](https://github.com/4mplelab/zmk-config-LisM/actions/runs/27255019193/artifacts/7527192151)
 
 
 ## モジュール構成とファームウェア
 
-左右のキーボードには、それぞれ対応したファームウェアを書き込む必要があります。  
-ファームウェアはモジュールの組み合わせによって異なります。
+左右それぞれのモジュールに合ったファームウェアを書き込んでください。左右は独立して選択できます。  
+`[c/p]`は`central` または `peripheral`。
 
-| 左側モジュール | 右側モジュール | 左手側ファームウェア | 右手側ファームウェア |
-| :--- | :--- | :--- | :--- |
-| トラックボール       | 非トラックボール[^1] | `lism_left_[c/p]_trackball.uf2` | `lism_right_[c/p]_non_trackball.uf2` |
-| 非トラックボール[^1] | トラックボール       | `lism_left_[c/p]_non_trackball.uf2` | `lism_right_[c/p]_trackball.uf2` |
-| 非トラックボール[^1] | 非トラックボール[^1] | `lism_left_[c/p]_non_trackball.uf2` | `lism_right_[c/p]_non_trackball.uf2` |
-| トラックボール       | トラックボール       | `lism_left_[c/p]_trackball.uf2` | `lism_right_[c/p]_trackball.uf2` |
-
-[c/p]は`central` または `peripheral`
+| モジュール | 左手側ファームウェア | 右手側ファームウェア |
+| :--- | :--- | :--- |
+| トラックボール | `lism_left_[c/p]_trackball.uf2` | `lism_right_[c/p]_trackball.uf2` |
+| 4方向スティック | `lism_left_[c/p]_4waystick.uf2` | `lism_right_[c/p]_4waystick.uf2` |
+| 非トラックボール[^1] | `lism_left_[c/p]_non_trackball.uf2` | `lism_right_[c/p]_non_trackball.uf2` |
 
 [^1]:「非トラックボール」モジュールには以下が含まれます。  
     - 水平ロータリーエンコーダー  
