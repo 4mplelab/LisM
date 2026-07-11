@@ -93,7 +93,7 @@ import { LinkButton } from '@astrojs/starlight/components';
     <TabItem label="2026.03以降">
     スイッチプレート・マイコンカバー・電源スイッチカバーは`フローティングデザイン`と`フラットデザイン`で共通です。  
     部品も共通のため、画像は`フラットデザイン`を使用します。  
-    ![ケース](img/main02_202603.jpg)
+    ![ケース](img/main02_202603.png)
 
     | 部品名 | モデル名 | 備考 |
     | :--- | :--- | :--- |
@@ -105,6 +105,7 @@ import { LinkButton } from '@astrojs/starlight/components';
     | マイコンカバー 右 | Right_MCUCover | |
     | 電源スイッチカバー 左 | Left_PowerSwitch |  |
     | 電源スイッチカバー 右 | Right_PowerSwitch |  |
+    | マグネットカバー | Left/Right_MagnetSpaceFiller | 左右共通 |
     </TabItem>
     <TabItem label="2026.02以前">
     ボトムケース・電源スイッチカバーは共通です。
@@ -156,6 +157,7 @@ import { LinkButton } from '@astrojs/starlight/components';
 | キーキャップ | 40 | 16.5mm x 16.5mm以下を推奨 |
 | USB-C ケーブル | 1 | PCとの接続用 |
 | 滑り止め | - | `+GRIPLUS+（グリップラス）`がオススメ |
+| 左右連結用マグネット 10x1mm | 8 | [任意] [共計技研 N54マグネット](https://amzn.asia/d/08Wj3fmV)がオススメ |
 
 **バッテリーについて**  
 組み立てオプション OP3-A / OP3-Bをご利用されない場合、下記いずれかをご用意ください。  
@@ -173,6 +175,7 @@ import { LinkButton } from '@astrojs/starlight/components';
 | キーキャップ | 40 | 16.5mm x 16.5mm以下を推奨 |
 | USB-C ケーブル | 1 | PCとの接続用 |
 | 滑り止め | - | `+GRIPLUS+（グリップラス）`がオススメ |
+| 左右連結用マグネット 10x1mm | 8 | [任意] [共計技研 N54マグネット](https://amzn.asia/d/08Wj3fmV)がオススメ |
 
 </TabItem>
 <TabItem label="ver 1.0.0">
@@ -185,6 +188,7 @@ import { LinkButton } from '@astrojs/starlight/components';
 | キーキャップ | 40 | 16.5mm x 16.5mm以下を推奨 |
 | USB-C ケーブル | 1 | PCとの接続用 |
 | 滑り止め | - | `+GRIPLUS+（グリップラス）`がオススメ |
+| 左右連結用マグネット 10x1mm | 8 | [任意] [共計技研 N54マグネット](https://amzn.asia/d/08Wj3fmV)がオススメ |
 
 </TabItem>
 </Tabs>
@@ -203,7 +207,7 @@ import { LinkButton } from '@astrojs/starlight/components';
 
 | 工具名 | 備考 |
 | :--- | :--- |
-| はんだペースト | 低温 or 中温 ([参考](https://amzn.asia/d/07bkpzHv)) |
+| はんだペースト | 低温 or 中温 ([参考](https://amzn.asia/d/088P4RZz)) |
 | はんだペースト用工具 | ヘラ、スキージー、プラスチックカードなど |
 | ホットプレート | [私が使用している物](https://amzn.asia/d/01FeKOD) |
 
@@ -223,20 +227,19 @@ import { LinkButton } from '@astrojs/starlight/components';
     基板とステンシルの間に浮きがないように注意してください。  
     ![ステンシル固定](img/main-build01-01.jpeg)
 2.  ステンシルの上からヘラなどではんだペーストを塗布します。  
-    (私は不要になったプラスチックカードを使用しています)  
     ![はんだペースト塗布](img/main-build01-02.jpeg)  
-3.  ステンシルをゆっくりと剥がし、XIAOとコネクタを所定の位置に載せます。  
+3.  ステンシルをゆっくりと剥がし、XIAO・コネクタ・電源スイッチを所定の位置に載せます。  
 
     <Aside type="tip" title="ブリッジしてしまった場合は、爪楊枝でブリッジ箇所のはんだを取り除いてください">
     </Aside>
 
     ![XIAO配置](img/main-build01-03.jpg)
 
-1.  ホットプレートで加熱し、リフローを行います。  
+4.  ホットプレートで加熱し、リフローを行います。  
     温度や時間は、使用するはんだペーストの仕様に従ってください。  
     ![リフロー](img/main-build01-04.jpeg)  
 
-    <Aside type="caution" title="ダイオードに当たらないように注意してください">
+    <Aside type="caution" title="裏面のダイオードがホットプレートに当たらないように注意してください">
     </Aside>
 
 ### 2. 基板の切り離し
@@ -308,7 +311,20 @@ import { LinkButton } from '@astrojs/starlight/components';
 <Tabs syncKey="case_version">
 <TabItem label="2026.03以降">
 #### 6-1 ボトムケース
-1.  ボトムケースのモジュール部分にマグネットを取り付けます。  
+1. 左右連結用マグネット(10mm x 1mm)  
+    <Tabs>
+        <TabItem label="取り付ける場合">
+        1. 左右が引っ付くように極性に注意して左右4ヶ所ずつ押し込んで取り付けてください。  
+            ![magnet_set](img/main-build06-202603-bottom-mag01.jpeg)  
+        </TabItem>
+        <TabItem label="取り付けない場合">
+        1. マグネットカバーを左右4ヶ所ずつ押し込んで取り付けてください。  
+           取り外し用の切り欠きの向きはどの向きでも問題ありません。  
+            ![magnet_set](img/main-build06-202603-bottom-mag02.jpeg)  
+        </TabItem>
+    </Tabs>
+
+2.  ボトムケースのモジュール部分にマグネットを取り付けます。  
     定規などで押さえて取り付けてください。
 
     <Aside type="caution" title="マグネットの極性に注意">
@@ -334,15 +350,15 @@ import { LinkButton } from '@astrojs/starlight/components';
     ![magnet_scale](img/main-build06-202603-02.jpeg)  
 
 
-2.  バッテリーを置き、電源スイッチカバーをボトムケースに取り付けます。  
+3.  バッテリーを置き、電源スイッチカバーをボトムケースに取り付けます。  
     電源スイッチカバーはOFF側(手前側)に緑がくるように取り付けてください。  
     ![pwr_switch](img/main-build06-202603-03.jpeg)  
 
-3.  電源スイッチと電源スイッチカバーの位置を合わせ、組み立てた基板をケースに載せます。  
+4.  電源スイッチと電源スイッチカバーの位置を合わせ、組み立てた基板をケースに載せます。  
     ![基板の配置](img/main-build06-202603-04.jpeg)  
     ![基板の配置](img/main-build06-202603-05.jpeg)
 
-4. 赤丸箇所を押し込み(初回は固いです)、バッテリーを接続します。  
+5. 赤丸箇所を押し込み(初回は固いです)、バッテリーを接続します。  
     ![バッテリー](img/main-build06-202603-06.jpeg)
 
    
