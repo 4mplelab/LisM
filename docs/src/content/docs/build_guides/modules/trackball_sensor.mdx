@@ -10,9 +10,9 @@ import { Badge } from '@astrojs/starlight/components';
 内容物・ケースが変更されています。
 
 ## 内容物
-<Tabs>
-<TabItem label="マグネットver 2025.12~">
-![部品](img/sensor01_02.jpg)
+<Tabs syncKey="case_version">
+<TabItem label="マグネットver">
+![部品](img/sensor01.png)
 
 | 部品名 | 数量 | 備考 |
 | :--- | :--- | :--- |
@@ -20,7 +20,23 @@ import { Badge } from '@astrojs/starlight/components';
 | マグネット | 4 | 3mm x 1mm 本体接続用 |
 | マグネット | 4 | 2mm x 1mm トラボユニット接続用 |
 
+</TabItem>
+<TabItem label="ネジver">
+![部品](img/sensor01.jpg)
+
+| 部品名 | 数量 | 備考 |
+| :--- | :--- | :--- |
+| 基板 | 1 | PAW3222搭載 |
+| ネジ | 4 | M2 x 4mm |
+| マグネット | 4 | 2mm x 1mm |
+
+</TabItem>
+</Tabs>
+
 ## ケース
+
+<Tabs syncKey="case_version">
+<TabItem label="マグネットver">
 ![ケース](img/sensor02_02.jpg)
 
 
@@ -32,17 +48,9 @@ import { Badge } from '@astrojs/starlight/components';
 | :--- | :--- | :--- |
 | トップケース | TopPart | |
 | ボトムケース | BottomPart | |
+
 </TabItem>
-<TabItem label="ネジver ~2025.11">
-![部品](img/sensor01.jpg)
-
-| 部品名 | 数量 | 備考 |
-| :--- | :--- | :--- |
-| 基板 | 1 | PAW3222搭載 |
-| ネジ | 4 | M2 x 4mm |
-| マグネット | 4 | 2mm x 1mm |
-
-## ケース
+<TabItem label="ネジver">
 ![ケース](img/sensor02.jpg)
 
 
@@ -54,34 +62,42 @@ import { Badge } from '@astrojs/starlight/components';
 | :--- | :--- | :--- |
 | トップケース | TopPart | |
 | ボトムケース | BottomPart | |
+
 </TabItem>
 </Tabs>
 
 
-## 組み立て手順
+## 組み立て手順 
 
 ### 1. トップケースへマグネット取り付け
-1. 4カ所へマグネットを取り付けてください。
+1. 4カ所へマグネット(φ2mm)を取り付けてください。
    
     :::caution[トラックボールユニットのマグネットの極性に合わせる必要があります]
     ![ケース](img/sensor-build01-01.jpeg)
     :::
 
 ### 2. ケース組み立て
-1. FFCコネクタの位置を確認し、トップケースへ基板を入れてください。  
-    ![ケース](img/sensor-build02-01.jpeg)
+
      
-<Tabs>
+<Tabs syncKey="case_version">
 <TabItem label="マグネットver">
-1. ボトムケースへマグネットを取り付けてください。  
+1. ボトムケースへマグネット(φ3mm)を取り付けてください。  
     :::caution[本体のマグネットの極性に合わせる必要があります]
-    ![ケース](img/sensor-build02-01-mag.jpeg)
     :::
-2. トップケースとボトムケースを合わせて嵌めてください。
+    ![ケース](img/sensor-build02-01-mag.jpeg)
+
+1. FFCコネクタの位置を確認し、ボトムケースへ基板を入れてください。  
+    ![ケース](img/sensor-build02-03-mag.jpeg)  
+    :::caution[嵌合が固くて嵌らない場合、基板側面を軽く削ってください]
+    :::
+   
+1. トップケースとボトムケースを合わせて嵌めてください。
     ![ケース](img/sensor-build02-02-mag.jpeg)  
 </TabItem>
 <TabItem label="ネジver">
-1. ボトムケースをM2ネジで固定して完成です。(締め過ぎ注意)  
+1. FFCコネクタの位置を確認し、トップケースへ基板を入れてください。  
+    ![ケース](img/sensor-build02-01.jpeg)
+2. ボトムケースをM2ネジで固定して完成です。(締め過ぎ注意)  
     ![ケース](img/sensor-build02-02.jpeg)  
 </TabItem>
 </Tabs>

@@ -231,15 +231,26 @@ import { LinkButton } from '@astrojs/starlight/components';
 3.  ステンシルをゆっくりと剥がし、XIAO・コネクタ・電源スイッチを所定の位置に載せます。  
 
     <Aside type="tip" title="ブリッジしてしまった場合は、爪楊枝でブリッジ箇所のはんだを取り除いてください">
+    特に背面パッド(BAT, RESET)がブリッジしていると致命的です。
     </Aside>
 
     ![XIAO配置](img/main-build01-03.jpg)
+
+    <Aside type="caution" title="XIAOは載せた後はなるべく動かさない">
+    背面のRESETパッドがブリッジしやすいです。
+    </Aside>
 
 4.  ホットプレートで加熱し、リフローを行います。  
     温度や時間は、使用するはんだペーストの仕様に従ってください。  
     ![リフロー](img/main-build01-04.jpeg)  
 
     <Aside type="caution" title="裏面のダイオードがホットプレートに当たらないように注意してください">
+    </Aside>
+
+    <Aside type="note" title="リセットがショートしていないか確認">
+    テスターを使用して、基板裏のリセットボタン部分がショートしていないか確認することをお勧めします。  
+    ショートしている場合、XIAOの背面パッド(RESET)がブリッジしている可能性が高いので、再リフローしてください。  
+    ![リセット確認](img/main-build01-05.jpg)
     </Aside>
 
 ### 2. 基板の切り離し
@@ -249,7 +260,6 @@ import { LinkButton } from '@astrojs/starlight/components';
 
 1. 分割した部分をやすりで滑らかに整えてください。  
    ![やすりがけ](img/main-build02-02.jpeg)
-   
 
 ### 3. 各種部品のはんだ付け
 
