@@ -47,6 +47,7 @@ export default defineConfig({
 									slug: 'build_guides/modules/vertical_rotary_encoder',
 								},
 								{ label: 'キースイッチ', slug: 'build_guides/modules/key' },
+								{ label: '4wayスティック', slug: 'build_guides/modules/4way_stick' },
 							],
 						},
 						{
