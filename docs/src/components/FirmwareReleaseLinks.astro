@@ -1,0 +1,57 @@
+---
+// ビルド時にzmk-config-LisMのGitHub Releasesを取得し、
+// 通常版/DYA Studio版それぞれの最新ダウンロードリンクを埋め込む。
+// タグは同一リポジトリ内で `vX.Y.Z`（通常版）と `vX.Y.Z-dya`（DYA Studio版）が
+// 別々に公開されるため、GitHub標準の `releases/latest` は使えない。
+
+const REPO = '4mplelab/zmk-config-LisM';
+
+type GitHubAsset = {
+	name: string;
+	browser_download_url: string;
+};
+
+type GitHubRelease = {
+	tag_name: string;
+	prerelease: boolean;
+	published_at: string;
+	assets: GitHubAsset[];
+};
+
+const res = await fetch(`https://api.github.com/repos/${REPO}/releases`);
+if (!res.ok) {
+	throw new Error(`GitHub Releasesの取得に失敗しました (${REPO}): ${res.status}`);
+}
+const releases: GitHubRelease[] = await res.json();
+
+function latestRelease(isDya: boolean): GitHubRelease {
+	const candidates = releases
+		.filter((r) => !r.prerelease && r.tag_name.endsWith('-dya') === isDya)
+		.sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime());
+
+	const latest = candidates[0];
+	if (!latest) {
+		throw new Error(`${REPO} に${isDya ? 'DYA Studio版' : '通常版'}のリリースが見つかりません`);
+	}
+	return latest;
+}
+
+function assetUrl(release: GitHubRelease, assetName: string): string {
+	const asset = release.assets.find((a) => a.name === assetName);
+	if (!asset) {
+		throw new Error(`${REPO}@${release.tag_name} に ${assetName} が見つかりません`);
+	}
+	return asset.browser_download_url;
+}
+
+const standard = latestRelease(false);
+const dya = latestRelease(true);
+
+const standardUrl = assetUrl(standard, 'firmware.zip');
+const dyaUrl = assetUrl(dya, 'firmware-dya.zip');
+---
+
+<ul>
+	<li><a href={standardUrl} target="_blank" rel="noopener noreferrer">{standard.tag_name}</a></li>
+	<li><a href={dyaUrl} target="_blank" rel="noopener noreferrer">DYA Studio対応版</a></li>
+</ul>

@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - doc-src
+  workflow_dispatch:
 
 jobs:
   build:
