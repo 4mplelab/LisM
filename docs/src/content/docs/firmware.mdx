@@ -58,8 +58,6 @@ import FirmwareReleaseLinks from '../../components/FirmwareReleaseLinks.astro';
 ---
 
 import { Image } from 'astro:assets';
-import boot1 from 'img/boot_01.jpeg';
-import boot2 from 'img/boot_02.jpeg';
 import err1 from 'img/write_fw_mac_err01.png';
 import err2 from 'img/write_fw_mac_err02.png';
 
@@ -72,10 +70,7 @@ import err2 from 'img/write_fw_mac_err02.png';
 2.  **ブートローダーモードで起動する**  
     以下の**いずれか**の方法でブートローダーモードにしてください。  
     - 反対側のキーボードの外側1番下のキーを押しながら、ブートローダーモードにしたい側のキーボードの外側1番下キーを押します。  
-        <div class="grid-container">
-            <Image src={boot1} alt="boot1" />
-            <Image src={boot2} alt="boot2" />
-        </div>
+      ![Bootloaderキーの位置](img/bootloader_key.svg)
     - キーボード底面のリセットボタンを**素早く2回**押します。  
       ![bottom](img/boot_03.jpeg)
     - XIAOのリセットボタンを**素早く2回**押します。  
@@ -129,6 +124,12 @@ LisMでは別ブランチ(`dya-studio_zmk-v0.3`)にて用意しています。
 
 #### 機能や使用方法
 本家 [DYA Studio](https://studio.dya.cormoran.works)を参照。 
+
+:::note[初回接続時はロック解除が必要]
+セキュリティのため、接続直後のキーボードは操作がロックされています。  
+`Default Layer`の**最下段・一番外側のキー**（左右どちらでも可）を長押しして`Device Layer`に切り替え、**右手の親指キー**（鍵アイコン）を押すとロックが解除されます。  
+![Unlockキーの位置](img/studio_unlock_key.svg)
+:::
 
 :::caution[DYA Studioに関しての注意事項]
 - 現時点では実験的な機能とのことですので、自己責任にてご利用ください。
@@ -227,4 +228,5 @@ PCに開発環境を構築する必要はありませんが、ビルドに数分
 3.  **ZMK Studioでの設定**
     1.  [ZMK Studio](https://studio.zmk.dev/)にアクセスします。
     2.  Web BluetoothまたはWeb Serialでキーボードに接続します。
-    3.  画面の指示に従い、キーマップを編集します。変更は即座に反映されます。
+    3.  ロックを解除します。（ロック解除方法は[DYA Studio利用時の注意事項](#1-dya-studio)と同様です）
+    4.  画面の指示に従い、キーマップを編集します。変更は即座に反映されます。
