@@ -1,5 +1,45 @@
 :root {
   --sl-content-width: 60rem;
+  /* 行間を少し広めに */
+  --sl-line-height: 2;
+
+  /* 見出しにメリハリを付ける（本文は縮小したぶん、見出しは大きめに）
+     ページタイトル(h1)はこの変数を直接参照している */
+  --sl-text-h1: 2.75rem;
+  --sl-text-h4: 1.4rem;
+  --sl-text-h5: 1.15rem;
+}
+
+/* h2/h3は使用テーマ(starlight-theme-galaxy)が --sl-text-h2/h3 を使わず
+   直接font-sizeを指定しているため、同じ形で上書きする */
+.sl-markdown-content h2 { font-size: 2.2rem; }
+.sl-markdown-content h3 { font-size: 1.75rem; }
+
+/* 本文の行間も、同テーマが .sl-markdown-content に line-height: 1.7 を
+   直接指定して --sl-line-height を無視しているため、直接上書きする */
+.sl-markdown-content {
+  line-height: var(--sl-line-height);
+}
+
+/* 文字サイズを全体的に少し小さく (rem基準を16px→15pxに) */
+html {
+  font-size: 93.75%;
+}
+
+/* ライトモードの本文色を純黒より少し柔らかく */
+:root[data-theme='light'] {
+  --sl-color-text: #33363d;
+}
+
+/* TabItem内の余白を広げる */
+starlight-tabs > *:not(.tablist-wrapper) {
+  padding: 1rem;
+}
+
+@media (max-width: 50rem) {
+  starlight-tabs > *:not(.tablist-wrapper) {
+    padding: 1rem;
+  }
 }
 
 .hero {
@@ -98,4 +138,46 @@ details.details-card > *:not(summary) > *:first-child {
 
 .grid-container > *{
   margin-top: 0;
+}
+
+/* 左右に余白を持たせたグリッド（動画埋め込みなど） */
+.grid-container.inset {
+  width: 95%;
+  margin: 2rem auto;
+}
+
+/* 16:9のレスポンシブ動画埋め込み */
+.video-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* 縦長Shorts等、単体で中央寄せする動画埋め込み */
+.video-embed-solo {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: 2rem auto;
+  aspect-ratio: 16 / 9;
+}
+
+.video-embed-solo.vertical {
+  aspect-ratio: 9 / 16;
+}
+
+.video-embed-solo iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }

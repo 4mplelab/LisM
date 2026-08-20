@@ -26,7 +26,7 @@ const releases: GitHubRelease[] = await res.json();
 
 function latestRelease(isDya: boolean): GitHubRelease {
 	const candidates = releases
-		.filter((r) => !r.prerelease && r.tag_name.endsWith('-dya') === isDya)
+		.filter((r) => !r.prerelease && /-dya(\.\d+)?$/.test(r.tag_name) === isDya)
 		.sort((a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime());
 
 	const latest = candidates[0];
