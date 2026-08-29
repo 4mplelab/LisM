@@ -14,6 +14,15 @@ title: トラックボールユニット (19mm) ビルドガイド
 | ベアリングシャフト | 3 | 1.4mm x 4mm |
 | マグネット | 4 | 3mm x 1mm |
 
+:::tip[より滑らかな回転を求める方へ]
+付属のベアリングを、同サイズの`ミネベア DDL-415ZZ`に交換すると、回転がより滑らかになります。
+
+- [ミネベア DDL-415ZZ (1個)](https://link.amazon/B0fMCE7HO)<span class="ad-label">広告</span>
+- [ミネベア DDL-415ZZ (4個セット)](https://link.amazon/B0anhGGv5)<span class="ad-label">広告</span>
+- [ミネベア DDL-415ZZ (6個セット)](https://link.amazon/B0b0M6U2S)<span class="ad-label">広告</span>
+- [ミネベア DDL-415ZZ (8個セット)](https://link.amazon/B00PCltxn)<span class="ad-label">広告</span>
+:::
+
 ## ケース
 ![ケース](img/ball19_02.jpg)
 
@@ -35,7 +44,7 @@ title: トラックボールユニット (19mm) ビルドガイド
 
 | 部品 | 数量 | 備考 |
 | :--- | :--- | :--- |
-| 接着剤 | 1 |  |
+| <span class="optional-label">任意</span> 接着剤 | - | マグネットの穴が緩い場合の固定用 |
 
 ---
 

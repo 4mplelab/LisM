@@ -1,0 +1,27 @@
+---
+import Default from '@astrojs/starlight/components/Footer.astro';
+
+const year = new Date().getFullYear();
+---
+
+<Default />
+<p class="copyright">&copy; {year} 4mple Lab</p>
+<p class="amazon-disclosure">
+	Amazonのアソシエイトとして、当サイトは適格販売により収入を得ています。
+</p>
+
+<style>
+	.amazon-disclosure,
+	.copyright {
+		width: 100%;
+		max-width: var(--sl-content-width);
+		margin-inline: auto;
+		font-size: var(--sl-text-xs);
+		color: var(--sl-color-gray-3);
+		text-align: center;
+	}
+
+	.amazon-disclosure {
+		margin-top: 0.5rem;
+	}
+</style>

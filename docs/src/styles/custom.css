@@ -181,3 +181,32 @@ details.details-card > *:not(summary) > *:first-child {
   height: 100%;
   border: 0;
 }
+
+/* アフィリエイトリンクに添える「広告」バッジ */
+.ad-label {
+  display: inline-block;
+  font-size: 0.65em;
+  line-height: 1;
+  padding: 0.15em 0.4em;
+  margin-left: 0.3em;
+  border-radius: 4px;
+  background-color: var(--sl-color-gray-5);
+  color: var(--sl-color-gray-2);
+  vertical-align: middle;
+  font-weight: 600;
+}
+
+/* 必須ではない部品に添える「任意」バッジ */
+.optional-label {
+  display: inline-block;
+  font-size: 0.65em;
+  line-height: 1;
+  padding: 0.15em 0.4em;
+  margin-left: 0.3em;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 1px solid var(--sl-color-accent);
+  color: var(--sl-color-accent);
+  vertical-align: middle;
+  font-weight: 600;
+}

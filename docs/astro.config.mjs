@@ -69,6 +69,9 @@ export default defineConfig({
 			customCss: [
 				'./src/styles/custom.css',
 			],
+			components: {
+				Footer: './src/components/Footer.astro',
+			},
 			head: [
 				{ tag: 'meta', attrs: { property: 'og:image', content: 'https://4mplelab.github.io/LisM/img/ogp_lism.png' } },
 				{
