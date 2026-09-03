@@ -182,8 +182,9 @@ details.details-card > *:not(summary) > *:first-child {
   border: 0;
 }
 
-/* アフィリエイトリンクに添える「広告」バッジ */
-.ad-label {
+/* アフィリエイトリンクに添える「広告」バッジ
+   クラス名に ad 等を含めると広告ブロッカーの汎用フィルタに検知され非表示にされるため避ける */
+.disclosure-badge {
   display: inline-block;
   font-size: 0.65em;
   line-height: 1;
@@ -194,6 +195,13 @@ details.details-card > *:not(summary) > *:first-child {
   color: var(--sl-color-gray-2);
   vertical-align: middle;
   font-weight: 600;
+}
+
+/* ライトモードは gray-5(薄いグレー)が白背景にほぼ溶け込み視認しにくいため、
+   背景を濃色・文字を淡色に反転させて視認性を確保する */
+:root[data-theme='light'] .disclosure-badge {
+  background-color: var(--sl-color-gray-3);
+  color: var(--sl-color-gray-7);
 }
 
 /* 必須ではない部品に添える「任意」バッジ */

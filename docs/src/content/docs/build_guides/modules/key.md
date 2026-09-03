@@ -32,7 +32,7 @@ title: キースイッチモジュール ビルドガイド
 | 部品 | 数量 | 備考 | 
 | :--- | :--- | :--- |
 | キースイッチ | 1 | Kailh Choc V1 または V2 |
-| <span class="optional-label">任意</span> 接着剤 | - | マグネットの穴が緩い場合の固定用 |
+| <span class="optional-label">任意</span> 接着剤 | - | マグネット固定用 ([オススメ](https://link.amazon/B00IsKbqJ)<span class="disclosure-badge">広告</span>) |
 
 ---
 
